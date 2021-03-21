@@ -1,9 +1,12 @@
 package nl.daanb.whiskeep.adapters
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_whiskey.view.*
+import nl.daanb.whiskeep.R
 import nl.daanb.whiskeep.models.Whiskey
 
 class WhiskeyAdapter(
@@ -12,11 +15,24 @@ class WhiskeyAdapter(
     class WhiskeyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WhiskeyViewHolder {
-        TODO("Not yet implemented")
+        return WhiskeyViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.item_whiskey,
+                    parent,
+                        false
+                )
+        )
     }
 
     override fun onBindViewHolder(holder: WhiskeyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val currentWhiskey = whiskeys[position]
+        holder.itemView.apply {
+            tv_whiskey_title.text = currentWhiskey.name
+            tv_whiskey_type.text = currentWhiskey.type
+            tv_whiskey_price.text = "€" + currentWhiskey.price.toString()
+            tv_whiskey_abv.text = currentWhiskey.abv.toString() + "%"
+            tv_whiskey_rating.text = currentWhiskey.rating.toString()
+        }
     }
 
     override fun getItemCount(): Int {
