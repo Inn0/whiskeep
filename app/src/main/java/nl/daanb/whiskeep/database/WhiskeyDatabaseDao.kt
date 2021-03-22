@@ -1,19 +1,19 @@
 package nl.daanb.whiskeep.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import nl.daanb.whiskeep.models.Whiskey
 
 @Dao
 interface WhiskeyDatabaseDao {
     @Insert
-    fun instert(whiskey: Whiskey)
+    fun insert(whiskey: Whiskey)
 
     @Update
     fun update(whiskey: Whiskey)
+
+    @Delete
+    fun delete(whiskey: Whiskey)
 
     @Query("SELECT * FROM whiskey_table WHERE whiskeyId = :key")
     fun get(key: Long): Whiskey

@@ -2,4 +2,6 @@
     <string name="app_name">Whiskeep</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete_all_data">Delete all data</string>
+    <string name="cleared_message">All data was deleted.</string>
 </resources>

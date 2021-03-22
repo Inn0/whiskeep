@@ -6,8 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "whiskey_table")
 data class Whiskey (
-    @PrimaryKey(autoGenerate = true)
-    var whiskeyId: Long = 0L,
 
     @ColumnInfo(name = "name")
     var name: String,
@@ -22,11 +20,14 @@ data class Whiskey (
     var price: Float,
 
     @ColumnInfo(name = "notes")
-    var notes: List<String>,
+    var notes: String,
 
     @ColumnInfo(name = "rating")
     var rating: Int,
 
     @ColumnInfo(name = "image")
-    var image: String = ""
+    var image: String = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzsEXqpZAV1PsujNxWQBu2HwNAOqZaIZA7Vg&usqp=CAU",
+
+    @PrimaryKey(autoGenerate = true)
+    var whiskeyId: Long = 0L
 )

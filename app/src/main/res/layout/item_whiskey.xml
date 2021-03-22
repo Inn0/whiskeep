@@ -90,4 +90,13 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_whiskey_abv"
         app:layout_constraintStart_toEndOf="@+id/tv_whiskey_price" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="@dimen/margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_whiskey_rating"
+        app:srcCompat="@drawable/ic_baseline_star_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

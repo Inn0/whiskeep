@@ -1,13 +1,31 @@
 package nl.daanb.whiskeep.home
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import nl.daanb.whiskeep.adapters.WhiskeyAdapter
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.*
+import nl.daanb.whiskeep.database.WhiskeyDatabaseDao
 import nl.daanb.whiskeep.models.Whiskey
 
-class HomeViewModel(application: Application): AndroidViewModel(application) {
-    val whiskeyAdapter: WhiskeyAdapter = WhiskeyAdapter(mutableListOf(
-            Whiskey(0, "Laphroaig", "Irish Whiskey" ,40F, 42.50F, listOf("Smoky", "Maritime"), 75),
-            Whiskey(0, "Four Roses", "Bourbon",40F, 22.50F, listOf("test"), 80)
-    ))
+class HomeViewModel(private val database: WhiskeyDatabaseDao): ViewModel() {
+    var whiskeys : LiveData<List<Whiskey>> = database.getAllWhiskeys()
+
+    private val viewModelJob = Job()
+
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+    fun deleteWhiskey(whiskey: Whiskey){
+        uiScope.launch {
+            withContext(Dispatchers.IO){
+                database.delete(whiskey)
+            }
+        }
+    }
+
+    fun clearDatabase() {
+        uiScope.launch {
+            withContext(Dispatchers.IO){
+                database.clear()
+            }
+        }
+    }
 }

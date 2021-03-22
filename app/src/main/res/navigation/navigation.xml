@@ -9,5 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="nl.daanb.whiskeep.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newWhiskeyFragment"
+            app:destination="@id/newWhiskeyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newWhiskeyFragment"
+        android:name="nl.daanb.whiskeep.newwhiskey.NewWhiskeyFragment"
+        android:label="NewWhiskeyFragment"
+        tools:layout="@layout/fragment_new_whiskey">
+        <action
+            android:id="@+id/action_newWhiskeyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
 </navigation>
