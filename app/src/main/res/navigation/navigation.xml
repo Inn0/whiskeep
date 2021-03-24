@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_newWhiskeyFragment"
             app:destination="@id/newWhiskeyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_whiskeyDetailsFragment"
+            app:destination="@id/whiskeyDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/newWhiskeyFragment"
@@ -22,6 +25,18 @@
         <action
             android:id="@+id/action_newWhiskeyFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whiskeyDetailsFragment"
+        android:name="nl.daanb.whiskeep.whiskeydetails.WhiskeyDetailsFragment"
+        android:label="WhiskeyDetailsFragment"
+        tools:layout="@layout/fragment_whiskey_details">
+        <action
+            android:id="@+id/action_whiskeyDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="whiskeyId"
+            app:argType="long" />
     </fragment>
 
 </navigation>

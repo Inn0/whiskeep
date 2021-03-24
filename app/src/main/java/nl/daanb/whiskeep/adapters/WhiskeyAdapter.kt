@@ -41,7 +41,10 @@ class WhiskeyAdapter(
                 viewModel.deleteWhiskey(currentWhiskey)
                 notifyItemRemoved(position)
             }
-            Glide.with(this).load(currentWhiskey.image).into(iv_whiskey_image)
+            Glide.with(this).load(currentWhiskey.image).placeholder(R.drawable.ic_baseline_local_bar_24).into(iv_whiskey_image)
+            setOnClickListener {
+                viewModel.startNavigation(currentWhiskey.whiskeyId)
+            }
         }
     }
 

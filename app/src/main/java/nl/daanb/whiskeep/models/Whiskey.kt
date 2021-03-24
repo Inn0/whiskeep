@@ -26,7 +26,7 @@ data class Whiskey (
     var rating: Int,
 
     @ColumnInfo(name = "image")
-    var image: String = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzsEXqpZAV1PsujNxWQBu2HwNAOqZaIZA7Vg&usqp=CAU",
+    var image: String,
 
     @PrimaryKey(autoGenerate = true)
     var whiskeyId: Long = 0L

@@ -38,6 +38,13 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNewWhiskeyFragment())
         }
 
+        viewModel.navigateToDetails.observe(viewLifecycleOwner, Observer { whiskey ->
+            whiskey?.let {
+                this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToWhiskeyDetailsFragment(viewModel.selectedWhiskeyId))
+                viewModel.doneNavigation()
+            }
+        })
+
         return binding.root
     }
 

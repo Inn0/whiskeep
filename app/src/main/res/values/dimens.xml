@@ -2,6 +2,6 @@
 <resources>
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="margin">8dp</dimen>
-    <dimen name="textSize_primary">18dp</dimen>
-    <dimen name="textSize_secondary">14dp</dimen>
+    <dimen name="textSize_primary">20sp</dimen>
+    <dimen name="textSize_secondary">16sp</dimen>
 </resources>

@@ -7,19 +7,19 @@ import nl.daanb.whiskeep.models.Whiskey
 @Dao
 interface WhiskeyDatabaseDao {
     @Insert
-    fun insert(whiskey: Whiskey)
+    suspend fun insert(whiskey: Whiskey)
 
     @Update
-    fun update(whiskey: Whiskey)
+    suspend fun update(whiskey: Whiskey)
 
     @Delete
-    fun delete(whiskey: Whiskey)
+    suspend fun delete(whiskey: Whiskey)
 
     @Query("SELECT * FROM whiskey_table WHERE whiskeyId = :key")
-    fun get(key: Long): Whiskey
+    fun get(key: Long): LiveData<Whiskey>
 
     @Query("DELETE FROM whiskey_table")
-    fun clear()
+    suspend fun clear()
 
     @Query("SELECT * FROM whiskey_table ORDER BY whiskeyId DESC")
     fun getAllWhiskeys(): LiveData<List<Whiskey>>

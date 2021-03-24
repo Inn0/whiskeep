@@ -6,6 +6,8 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -37,6 +39,11 @@ android {
     buildFeatures {
         dataBinding true
     }
+
+    dataBinding {
+        enabled true
+    }
+
 }
 
 dependencies {
