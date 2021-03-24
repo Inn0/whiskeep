@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/darkgray">
 
         <ImageView
             android:id="@+id/iv_whiskeydetails_image"
@@ -27,10 +28,11 @@
             android:id="@+id/btn_whiskeydetails_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin"
-            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="Close"
+            android:backgroundTint="@color/error"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -59,6 +61,7 @@
             android:text="Name:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/iv_whiskeydetails_image" />
 
@@ -70,6 +73,7 @@
             android:text="Type:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -81,6 +85,7 @@
             android:text="ABV:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -92,6 +97,7 @@
             android:text="Rating:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -103,6 +109,7 @@
             android:text="Price:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -114,6 +121,7 @@
             android:text="Notes:"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -126,6 +134,7 @@
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -137,6 +146,7 @@
             android:text="@{viewModel.selectedWhiskey.name}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/iv_whiskeydetails_image" />
 
@@ -148,6 +158,7 @@
             android:text="@{viewModel.selectedWhiskey.type}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -159,6 +170,7 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.abv)}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -170,6 +182,7 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.rating)}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -182,6 +195,7 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.price)}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -193,6 +207,7 @@
             android:text="@{viewModel.selectedWhiskey.notes}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -201,6 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="@{viewModel.details}"
+            app:tint="@color/gold"
             app:layout_constraintBottom_toBottomOf="@+id/textView13"
             app:layout_constraintStart_toEndOf="@+id/textView13"
             app:layout_constraintTop_toTopOf="@+id/textView13"
@@ -213,6 +229,7 @@
             android:text="@string/euro_sign"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView14"
             app:layout_constraintStart_toEndOf="@+id/guideline4"
             app:layout_constraintTop_toTopOf="@+id/textView14" />
@@ -221,8 +238,8 @@
             android:id="@+id/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin"
-            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:onClick="@{() -> viewModel.toggleVisibility()}"
             android:text="Edit"
             android:visibility="@{viewModel.details}"
@@ -234,10 +251,11 @@
             android:id="@+id/buttonSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin"
-            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:onClick="@{}"
             android:text="Save"
+            android:backgroundTint="@color/success"
             android:visibility="@{viewModel.editing}"
             app:layout_constraintBottom_toTopOf="@+id/btn_whiskeydetails_close"
             app:layout_constraintEnd_toEndOf="parent"
@@ -252,6 +270,7 @@
             android:inputType="textPersonName"
             android:text="@{viewModel.selectedWhiskey.name}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -266,6 +285,7 @@
             android:inputType="textPersonName"
             android:text="@{viewModel.selectedWhiskey.type}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -280,6 +300,7 @@
             android:inputType="numberDecimal"
             android:text="@{String.valueOf(viewModel.selectedWhiskey.abv)}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -294,6 +315,7 @@
             android:inputType="numberDecimal"
             android:text="@{String.valueOf(viewModel.selectedWhiskey.rating)}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -308,6 +330,7 @@
             android:inputType="numberDecimal"
             android:text="@{String.valueOf(viewModel.selectedWhiskey.price)}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -322,6 +345,7 @@
             android:inputType="textPersonName"
             android:text="@{viewModel.selectedWhiskey.notes}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -336,6 +360,7 @@
             android:inputType="textPersonName"
             android:text="@{viewModel.selectedWhiskey.image}"
             android:visibility="@{viewModel.editing}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textView18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
