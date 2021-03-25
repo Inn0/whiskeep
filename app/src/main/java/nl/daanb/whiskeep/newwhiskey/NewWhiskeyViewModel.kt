@@ -1,11 +1,17 @@
 package nl.daanb.whiskeep.newwhiskey
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import nl.daanb.whiskeep.database.WhiskeyDatabaseDao
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * ViewModel for the whiskey creation page.
+ *
+ * @param database The whiskey DAO
+ *
+ * @author Daan Brocatus
+ */
 class NewWhiskeyViewModel(val database: WhiskeyDatabaseDao) : ViewModel() {
     private val viewModelJob = Job()
 

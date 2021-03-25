@@ -7,6 +7,13 @@ import kotlinx.coroutines.*
 import nl.daanb.whiskeep.database.WhiskeyDatabaseDao
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * The ViewModel for the home page. It keeps track of navigation and can clear the database.
+ *
+ * @author Daan Brocatus
+ *
+ * @param database The DAO needed to perform operations on the database
+ */
 class HomeViewModel(private val database: WhiskeyDatabaseDao): ViewModel() {
     var whiskeys : LiveData<List<Whiskey>> = database.getAllWhiskeys()
 

@@ -21,6 +21,11 @@ import nl.daanb.whiskeep.models.Whiskey
 import nl.daanb.whiskeep.newwhiskey.NewWhiskeyFragmentDirections
 import java.util.*
 
+/**
+ * Details page about a whiskey. It enables the user to see all data about one whiskey and gices them the option to either edit or delete them.
+ *
+ * @author Daan Brocatus
+ */
 class WhiskeyDetailsFragment : Fragment() {
     private lateinit var viewModel: WhiskeyDetailsViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

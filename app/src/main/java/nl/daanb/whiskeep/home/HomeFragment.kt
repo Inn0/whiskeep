@@ -14,6 +14,11 @@ import nl.daanb.whiskeep.adapters.WhiskeyAdapter
 import nl.daanb.whiskeep.database.WhiskeyDatabase
 import nl.daanb.whiskeep.databinding.FragmentHomeBinding
 
+/**
+ * The 'home' page. gives the user an overview of all their whiskeys and the ability to completely clear the database.
+ *
+ * @author Daan Brocatus
+ */
 class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

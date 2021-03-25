@@ -1,6 +1,7 @@
 package nl.daanb.whiskeep.adapters
 
-import android.util.Log
+
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,16 @@ import nl.daanb.whiskeep.R
 import nl.daanb.whiskeep.home.HomeViewModel
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * The adapter used on the home screen to display the whiskeys.
+ *
+ * @author Daan Brocatus
+ *
+ * @param whiskeys A list of Whikeys
+ * @param viewModel The associated viewmodel
+ */
 class WhiskeyAdapter(
-    private val whiskeys: List<Whiskey>, private val viewModel: HomeViewModel
+    whiskeys: List<Whiskey>, private val viewModel: HomeViewModel
 ): RecyclerView.Adapter<WhiskeyAdapter.WhiskeyViewHolder>() {
     class WhiskeyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     private var whiskeyList: List<Whiskey> = whiskeys
@@ -27,6 +36,8 @@ class WhiskeyAdapter(
         )
     }
 
+    // Suppress hints about string formatting as they are irrelevant for the functionality
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: WhiskeyViewHolder, position: Int) {
         whiskeyList = whiskeyList.sortedByDescending { it.rating }
         val currentWhiskey = whiskeyList[position]

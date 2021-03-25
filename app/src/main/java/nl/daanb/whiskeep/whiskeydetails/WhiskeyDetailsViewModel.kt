@@ -1,6 +1,5 @@
 package nl.daanb.whiskeep.whiskeydetails
 
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +8,14 @@ import kotlinx.coroutines.*
 import nl.daanb.whiskeep.database.WhiskeyDatabaseDao
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * ViewModel for the details page. It provides the functionality of reading, editing and deleting the data of one specific whiskey.
+ *
+ * @param whiskeyId The ID of the whiskey that was selected
+ * @param database The DAO for the whiskey database
+ *
+ * @author Daan Brocatus
+ */
 class WhiskeyDetailsViewModel(val whiskeyId: Long, val database: WhiskeyDatabaseDao) : ViewModel() {
     private val viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)

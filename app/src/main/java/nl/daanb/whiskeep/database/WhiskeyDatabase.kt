@@ -6,6 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * Ensures that there is one unique instance of the database available. Whenever the version changes (i.e. the model the database is supposed to store changes) it destroys the old database and creates a new one that is capable of holding objects of the new model class.
+ *
+ * @author Daan Brocatus
+ */
 @Database(entities = [Whiskey::class], version = 4, exportSchema = false)
 abstract class WhiskeyDatabase: RoomDatabase() {
     abstract val whiskeyDatabaseDao: WhiskeyDatabaseDao

@@ -4,6 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import nl.daanb.whiskeep.models.Whiskey
 
+/**
+ * The data access object that enables the app to perform queries on the local SQLite database.
+ *
+ * @author Daan Brocatus
+ */
 @Dao
 interface WhiskeyDatabaseDao {
     @Insert

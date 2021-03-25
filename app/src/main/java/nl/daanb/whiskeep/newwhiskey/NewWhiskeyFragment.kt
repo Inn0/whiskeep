@@ -2,7 +2,6 @@ package nl.daanb.whiskeep.newwhiskey
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +15,14 @@ import kotlinx.android.synthetic.main.fragment_new_whiskey.*
 import nl.daanb.whiskeep.R
 import nl.daanb.whiskeep.database.WhiskeyDatabase
 import nl.daanb.whiskeep.databinding.FragmentNewWhiskeyBinding
-import nl.daanb.whiskeep.home.HomeViewModelFactory
 import nl.daanb.whiskeep.models.Whiskey
-import java.lang.NumberFormatException
 import java.util.*
 
+/**
+ * The page for creating a new whiskey.
+ *
+ * @author Daan Brocatus
+ */
 class NewWhiskeyFragment: Fragment() {
     private lateinit var viewModel: NewWhiskeyViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
