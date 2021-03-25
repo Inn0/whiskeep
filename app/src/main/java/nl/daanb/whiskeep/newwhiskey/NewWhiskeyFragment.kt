@@ -46,7 +46,8 @@ class NewWhiskeyFragment: Fragment() {
                             et_whiskey_price.text.toString().toFloat(),
                             et_whiskey_notes.text.toString(),
                             et_whiskey_rating.text.toString().toInt(),
-                            et_whiskey_img.text.toString()
+                            et_whiskey_img.text.toString(),
+                            et_whiskey_area.text.toString()
                         )
                         viewModel.saveWhiskey(newWhiskey)
                         findNavController().navigate(NewWhiskeyFragmentDirections.actionNewWhiskeyFragmentToHomeFragment())

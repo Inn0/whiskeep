@@ -17,8 +17,6 @@ class WhiskeyAdapter(
     class WhiskeyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     private var whiskeyList: List<Whiskey> = whiskeys
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WhiskeyViewHolder {
         return WhiskeyViewHolder(
                 LayoutInflater.from(parent.context).inflate(
@@ -30,6 +28,7 @@ class WhiskeyAdapter(
     }
 
     override fun onBindViewHolder(holder: WhiskeyViewHolder, position: Int) {
+        whiskeyList = whiskeyList.sortedByDescending { it.rating }
         val currentWhiskey = whiskeyList[position]
         holder.itemView.apply {
             tv_whiskey_title.text = currentWhiskey.name

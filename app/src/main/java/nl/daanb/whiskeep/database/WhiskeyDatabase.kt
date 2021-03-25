@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import nl.daanb.whiskeep.models.Whiskey
 
-@Database(entities = [Whiskey::class], version = 3, exportSchema = false)
+@Database(entities = [Whiskey::class], version = 4, exportSchema = false)
 abstract class WhiskeyDatabase: RoomDatabase() {
     abstract val whiskeyDatabaseDao: WhiskeyDatabaseDao
 

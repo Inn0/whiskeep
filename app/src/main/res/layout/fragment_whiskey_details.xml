@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/iv_whiskeydetails_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="225dp"
+            android:layout_height="225dp"
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +95,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
             android:text="Rating:"
+            android:textColor="@color/white"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -105,25 +105,37 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
+            android:layout_marginTop="8dp"
             android:text="Price:"
+            android:textColor="@color/white"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Area:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
             android:text="Notes:"
+            android:textColor="@color/white"
             android:textSize="@dimen/textSize_primary"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/textView18"
@@ -200,16 +212,32 @@
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
-            android:text="@{viewModel.selectedWhiskey.notes}"
+            android:text="@{viewModel.selectedWhiskey.area}"
             android:textSize="@dimen/textSize_primary"
             android:visibility="@{viewModel.details}"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginEnd="50dp"
+            android:ellipsize="end"
+            android:singleLine="false"
+            android:text="@{viewModel.selectedWhiskey.notes}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_primary"
+            android:visibility="@{viewModel.details}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -271,6 +299,8 @@
             android:text="@{viewModel.selectedWhiskey.name}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="name"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -286,6 +316,8 @@
             android:text="@{viewModel.selectedWhiskey.type}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="type"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -301,6 +333,8 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.abv)}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="abv"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -316,6 +350,8 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.rating)}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="rating"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -331,6 +367,8 @@
             android:text="@{String.valueOf(viewModel.selectedWhiskey.price)}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="price"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -346,10 +384,29 @@
             android:text="@{viewModel.selectedWhiskey.notes}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="notes"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        <EditText
+            android:id="@+id/et_details_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:ems="10"
+            android:hint="area"
+            android:inputType="textPersonName"
+            android:text="@{viewModel.selectedWhiskey.area}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:visibility="@{viewModel.editing}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
 
         <EditText
             android:id="@+id/et_details_img"
@@ -361,6 +418,8 @@
             android:text="@{viewModel.selectedWhiskey.image}"
             android:visibility="@{viewModel.editing}"
             android:textColor="@color/white"
+            android:hint="image URL"
+            android:textColorHint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@+id/textView18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"

@@ -59,7 +59,8 @@ class WhiskeyDetailsFragment : Fragment() {
                             et_details_price.text.toString().toFloat(),
                             et_details_notes.text.toString(),
                             et_details_rating.text.toString().toInt(),
-                            et_details_img.text.toString()
+                            et_details_img.text.toString(),
+                            et_details_area.text.toString()
                         )
                         viewModel.udpateWhiskey(updatedWhiskey)
                         viewModel.toggleVisibility()

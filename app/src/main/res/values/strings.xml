@@ -5,7 +5,6 @@
     <string name="delete_all_data">Delete all data</string>
     <string name="cleared_message">All data was deleted.</string>
     <string name="empty_fields">Please provide at least a name, type, ABV, price and rating</string>
-    <string name="default_img">https://i.pinimg.com/474x/4f/dd/88/4fdd88960a864f6febeece153d81d9b3.jpg</string>
     <string name="out_of_bounds">Please provide a rating between 1 and 100</string>
     <string name="too_much_alcohol">Please provide an ABV between 20 and 60</string>
     <string name="euro_sign">€</string>

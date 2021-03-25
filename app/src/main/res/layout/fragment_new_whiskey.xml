@@ -70,6 +70,21 @@
             app:layout_constraintTop_toBottomOf="@+id/et_whiskey_abv" />
 
         <EditText
+            android:id="@+id/et_whiskey_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Area"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/et_whiskey_price" />
+
+        <EditText
             android:id="@+id/et_whiskey_rating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -81,8 +96,9 @@
             android:textColor="@color/white"
             android:textColorHint="@color/gray"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toBottomOf="@+id/et_whiskey_price" />
+            app:layout_constraintTop_toBottomOf="@+id/et_whiskey_area" />
 
         <EditText
             android:id="@+id/et_whiskey_img"
@@ -93,8 +109,8 @@
             android:ems="10"
             android:hint="Image URL"
             android:inputType="textPersonName"
-            android:text="@string/default_img"
             android:textColor="@color/white"
+            android:textColorHint="@color/gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/et_whiskey_rating" />
@@ -190,6 +206,19 @@
             app:layout_constraintBottom_toBottomOf="@+id/et_whiskey_price"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/et_whiskey_price" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Area: "
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_primary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/et_whiskey_area"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_whiskey_area" />
 
         <TextView
             android:id="@+id/textView6"

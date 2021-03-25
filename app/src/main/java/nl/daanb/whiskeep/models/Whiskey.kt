@@ -28,6 +28,9 @@ data class Whiskey (
     @ColumnInfo(name = "image")
     var image: String,
 
+    @ColumnInfo(name = "Area")
+    var area: String = "",
+
     @PrimaryKey(autoGenerate = true)
     var whiskeyId: Long = 0L
 )
