@@ -2,9 +2,7 @@ package nl.daanb.whiskeep.whiskeydetails
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
@@ -26,6 +24,8 @@ import java.util.*
 class WhiskeyDetailsFragment : Fragment() {
     private lateinit var viewModel: WhiskeyDetailsViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
+
         val binding: FragmentWhiskeyDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_whiskey_details, container, false)
 
         binding.lifecycleOwner = this
@@ -89,5 +89,26 @@ class WhiskeyDetailsFragment : Fragment() {
     private fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.kebab_menu_details, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_details_delete -> {
+                viewModel.deleteWhiskey()
+                findNavController().navigate(WhiskeyDetailsFragmentDirections.actionWhiskeyDetailsFragmentToHomeFragment())
+                Snackbar.make(
+                    requireActivity().findViewById(android.R.id.content),
+                    getString(R.string.whiskey_deleted),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

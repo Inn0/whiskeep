@@ -36,10 +36,6 @@ class WhiskeyAdapter(
             tv_whiskey_price.text = "€" + currentWhiskey.price.toString()
             tv_whiskey_abv.text = currentWhiskey.abv.toString() + "%"
             tv_whiskey_rating.text = currentWhiskey.rating.toString()
-            iv_whiskey_delete.setOnClickListener {
-                viewModel.deleteWhiskey(currentWhiskey)
-                notifyItemRemoved(position)
-            }
             Glide.with(this).load(currentWhiskey.image).placeholder(R.drawable.ic_baseline_local_bar_24).into(iv_whiskey_image)
             setOnClickListener {
                 viewModel.startNavigation(currentWhiskey.whiskeyId)

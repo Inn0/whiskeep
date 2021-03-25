@@ -36,6 +36,14 @@ class WhiskeyDetailsViewModel(val whiskeyId: Long, val database: WhiskeyDatabase
         }
     }
 
+    fun deleteWhiskey(){
+        uiScope.launch {
+            withContext(Dispatchers.IO){
+                database.delete(selectedWhiskey.value!!)
+            }
+        }
+    }
+
     fun toggleVisibility() {
         if(_details.value == View.VISIBLE){
             _details.value = View.GONE

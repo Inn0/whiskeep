@@ -8,4 +8,6 @@
     <string name="out_of_bounds">Please provide a rating between 1 and 100</string>
     <string name="too_much_alcohol">Please provide an ABV between 20 and 60</string>
     <string name="euro_sign">€</string>
+    <string name="delete_whiskey">Delete whiskey</string>
+    <string name="whiskey_deleted">Whiskey deleted!</string>
 </resources>

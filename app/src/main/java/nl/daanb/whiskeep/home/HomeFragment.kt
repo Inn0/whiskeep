@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
         val viewModelFactory = HomeViewModelFactory(WhiskeyDatabase.getInstance(application).whiskeyDatabaseDao)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
 
-        var whiskeyAdapter = WhiskeyAdapter(listOf(), viewModel)
+        val whiskeyAdapter = WhiskeyAdapter(listOf(), viewModel)
 
         binding.rvWhiskeys.adapter = whiskeyAdapter
         binding.rvWhiskeys.layoutManager = LinearLayoutManager(activity)

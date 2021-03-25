@@ -27,14 +27,6 @@ class HomeViewModel(private val database: WhiskeyDatabaseDao): ViewModel() {
         _navigateToDetails.value = id
     }
 
-    fun deleteWhiskey(whiskey: Whiskey){
-        uiScope.launch {
-            withContext(Dispatchers.IO){
-                database.delete(whiskey)
-            }
-        }
-    }
-
     fun clearDatabase() {
         uiScope.launch {
             withContext(Dispatchers.IO){

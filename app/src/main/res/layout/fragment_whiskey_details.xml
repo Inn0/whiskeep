@@ -28,15 +28,15 @@
             android:id="@+id/btn_whiskeydetails_close"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Close"
             android:backgroundTint="@color/error"
+            android:text="Close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -267,12 +267,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
             android:onClick="@{() -> viewModel.toggleVisibility()}"
             android:text="Edit"
             android:visibility="@{viewModel.details}"
-            app:layout_constraintBottom_toTopOf="@+id/btn_whiskeydetails_close"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -280,13 +281,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/success"
             android:onClick="@{}"
             android:text="Save"
-            android:backgroundTint="@color/success"
             android:visibility="@{viewModel.editing}"
-            app:layout_constraintBottom_toTopOf="@+id/btn_whiskeydetails_close"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
@@ -424,6 +426,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -81,17 +81,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_local_bar_24" />
 
-    <ImageView
-        android:id="@+id/iv_whiskey_delete"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
-        app:tint="@color/error"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
-
     <TextView
         android:id="@+id/tv_whiskey_rating"
         android:layout_width="wrap_content"
